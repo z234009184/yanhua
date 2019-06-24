@@ -44,6 +44,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.king.zxing.CaptureActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".EasyCaptureActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
