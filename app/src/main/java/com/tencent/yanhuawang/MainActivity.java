@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // 设置状态栏颜色
-        StatusBarUtil.setColor(MainActivity.this, 0xFFC32A19, 0);
+        StatusBarUtil.setColor(MainActivity.this, 0xFFFF0304, 0);
 
         // 构建WebView
         LinearLayout linearLayout = findViewById(R.id.lin_web);
