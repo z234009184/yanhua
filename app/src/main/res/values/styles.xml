@@ -12,5 +12,15 @@
         <item name="android:clickable">true</item>
         <item name="android:onClick">onClick</item>
     </style>
+    <style name="LunchTheme" parent="android:Theme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <!--将Activity的Theme设置成透明-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--下面这句如果你加上觉得好看就加，不好看就不加咯-->
+        <!--<item name="android:navigationBarColor">@color/transparent</item>-->
+        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/lunch_img</item>
+    </style>
 
 </resources>
