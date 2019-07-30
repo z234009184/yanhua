@@ -39,7 +39,7 @@ public class EasyCaptureActivity extends CaptureActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        StatusBarUtil.setColor(this, 0xFFFF0304, 0);
+        StatusBarUtil.setColor(this, 0xFFE32323, 0);
 //        StatusBarUtils.immersiveStatusBar(this,toolbar,0.2f);
         TextView tvTitle = findViewById(R.id.tvTitle);
         tvTitle.setText(getIntent().getStringExtra("key_title"));

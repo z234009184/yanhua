@@ -4,21 +4,24 @@ package com.tencent.yanhuawang;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.webkit.JavascriptInterface;
+import com.just.agentweb.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 import com.just.agentweb.AgentWeb;
-import com.king.zxing.CaptureActivity;
 import com.king.zxing.Intents;
 
 import pub.devrel.easypermissions.AfterPermissionGranted;
@@ -29,22 +32,29 @@ public class MainActivity extends AppCompatActivity {
 
     private AgentWeb webView;
 
+    public WebChromeClient mWebChromeClient = new WebChromeClient() {
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // 设置状态栏颜色
-        StatusBarUtil.setColor(MainActivity.this, 0xFFFF0304, 0);
+        StatusBarUtil.setColor(MainActivity.this, 0xFFE32323, 0);
 
         // 构建WebView
         LinearLayout linearLayout = findViewById(R.id.lin_web);
         webView = AgentWeb.with(this)
                 .setAgentWebParent(linearLayout, new LinearLayout.LayoutParams(-1, -1))
                 .closeIndicator()
+                .setWebChromeClient(mWebChromeClient)
                 .createAgentWeb()
                 .ready()
+//                .go("https://v.qq.com/x/page/q0842cihiac_0.html");
                 .go("http://119.3.219.52:8080/firework/static/index.html#/");
+
 
         //"http://119.3.219.52:8080/firework/static/index.html#/"
 //        webView.getWebCreator().getWebView().loadUrl("file:///android_asset/demo.html");

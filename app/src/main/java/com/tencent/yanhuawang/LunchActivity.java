@@ -29,6 +29,6 @@ public class LunchActivity extends Activity {
             }
         }, 3000);
 
-        
+
     }
 }
